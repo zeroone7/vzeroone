@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container header {
+  min-height: 5vh;
+}
+
+.container main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  flex: 1 1 0;
+  overflow-y: auto;
+}
+
+.container footer {
+  min-height: 3vh;
+}

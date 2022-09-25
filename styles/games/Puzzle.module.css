@@ -1,0 +1,124 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 92vh;
+}
+
+.section ul {
+  margin-top: 1rem;
+  list-style: none;
+  border: 2px solid dodgerblue;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.section li {
+  width: 100px;
+  height: 100px;
+  color: white;
+  background: url("https://placeimg.com/400/400/any");
+}
+
+.section .playtime {
+  font-size: 3rem;
+  margin-top: 2rem;
+  color: dodgerblue;
+}
+
+.setion .btn-start {
+  background: dodgerblue;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+
+.section .game-text {
+  position: absolute;
+  font-size: 3rem;
+  color: hotpink;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.section .list0 {
+  background-position-x: 0px;
+  background-position-y: 0px;
+}
+
+.section .list1 {
+  background-position-x: -100px;
+  background-position-y: 0px;
+}
+
+.section .list2 {
+  background-position-x: -200px;
+  background-position-y: 0px;
+}
+
+.section .list3 {
+  background-position-x: -300px;
+  background-position-y: 0px;
+}
+
+.section .list4 {
+  background-position-x: 0px;
+  background-position-y: -100px;
+}
+
+.section .list5 {
+  background-position-x: -100px;
+  background-position-y: -100px;
+}
+
+.section .list6 {
+  background-position-x: -200px;
+  background-position-y: -100px;
+}
+
+.section .list7 {
+  background-position-x: -300px;
+  background-position-y: -100px;
+}
+
+.section .list8 {
+  background-position-x: 0px;
+  background-position-y: -200px;
+}
+
+.section .list9 {
+  background-position-x: -100px;
+  background-position-y: -200px;
+}
+
+.section .listl0 {
+  background-position-x: -200px;
+  background-position-y: 200px;
+}
+
+.section .list11 {
+  background-position-x: -300px;
+  background-position-y: -200px;
+}
+
+.section .list12 {
+  background-position-x: 0px;
+  background-position-y: -300px;
+}
+
+.section .list13 {
+  background-position-x: -100px;
+  background-position-y: -300px;
+}
+
+.section .list14 {
+  background-position-x: -200px;
+  background-position-y: -300px;
+}
+
+.section .list15 {
+  background-position-x: -300px;
+  background-position-y: -300px;
+}

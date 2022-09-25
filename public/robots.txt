@@ -1,0 +1,7 @@
+# /accounts 경로에 대해서는 모든 크롤러를 불허
+User-agent: *
+Disallow: /accounts
+
+# 모든 크롤러 허용
+User-agent: *
+Allow: /

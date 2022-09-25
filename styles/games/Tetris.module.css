@@ -1,0 +1,9 @@
+.section {
+  display: flex;
+  justify-content: center;
+  /* height: 92vh; */
+}
+
+.section canvas {
+  border: 1px solid lightgray;
+}

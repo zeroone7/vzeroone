@@ -1,0 +1,83 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.section a {
+  position: relative;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
+}
+
+.section a:hover {
+  letter-spacing: 0.25rem;
+  background: var(--clr);;
+  color: var(--clr);
+  box-shadow: 0 0 35px var(--clr);
+}
+
+.section a::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #27282c;
+}
+
+ .section a span {
+  position: relative;
+  z-index: 1;
+}
+
+.section a i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.section a i::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 100%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #27282c;
+  border: 2px solid var(--clr);
+  transition: 0.5s;
+}
+
+.section a:hover i::before {
+  left: 0%;
+  transform: translateX(-50%) rotate(45deg);
+  box-shadow: 40px 39px var(--clr);
+}
+
+.section a i::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #27282c;
+  border: 2px solid var(--clr);
+  transition: 0.5s;
+}
+
+.section a:hover i::after {
+  left: 100%;
+  transform: translateX(-50%) rotate(-45deg);
+  box-shadow: 38px -39px var(--clr);
+}

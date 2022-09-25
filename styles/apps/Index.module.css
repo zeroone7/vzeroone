@@ -1,0 +1,17 @@
+.app__item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.app__item li {
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px primary;
+  margin: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.app__item span {
+  color: hotpink;
+}
