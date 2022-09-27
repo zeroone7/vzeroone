@@ -39,17 +39,8 @@ const App: NextPage = () => {
   };
 
   const apps = [
-    { category: "css", name: "SoapBubble", component: "SoapBubble" },
-    // { category: "css", name: "Slider", component: "Slider" },
-    { category: "css", name: "Loader", component: "Loader" },
-    // { category: "script", name: "Redux", component: "Redux" },
-    {
-      category: "css",
-      name: "TextAnimation",
-      component: "TextAnimation",
-    },
-    { category: "css", name: "GlowButton", component: "GlowButton" },
-    { category: "canvas", name: "CodingMath", component: "CodingMath" },
+    { category: "3D", name: "BakedLighting", component: "BakedLighting" },
+    { category: "3D", name: "Product3D", component: "Product3D" },
     { category: "canvas", name: "ParticleRegen", component: "ParticleRegen" },
     {
       category: "canvas",
@@ -86,7 +77,18 @@ const App: NextPage = () => {
     { category: "canvas", name: "SpiralStar", component: "SpiralStar" },
     { category: "canvas", name: "SpiralCircle", component: "SpiralCircle" },
     { category: "canvas", name: "Steering", component: "Steering" },
-    // { category: "canvas", name: "Loader", component: "Loader" },
+    { category: "css", name: "SoapBubble", component: "SoapBubble" },
+    { category: "css", name: "Loader", component: "Loader" },
+    {
+      category: "css",
+      name: "TextAnimation",
+      component: "TextAnimation",
+    },
+    { category: "css", name: "GlowButton", component: "GlowButton" },
+    { category: "3D", name: "BabylonJS", component: "BabylonJS" },
+    { category: "canvas", name: "CodingMath", component: "CodingMath" },
+    // { category: "css", name: "Slider", component: "Slider" },
+    // { category: "script", name: "Redux", component: "Redux" },
   ];
 
   appItem = apps.map((app, id) => (

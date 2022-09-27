@@ -21,7 +21,7 @@ const CircletoCircleCollision: NextPage = () => {
     const hMouseMove = (event: MouseEvent) => {
       ctx.clearRect(0, 0, width, height);
 
-      const pos = Utils.getMousePos(canvasRef.current, event, width, height)!;
+      const pos = Utils.getClientPos(canvasRef.current, event, width, height)!;
 
       if (Utils.pointInRect(pos.x, pos.y, rect)) {
         ctx.fillStyle = "#f66";

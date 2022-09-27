@@ -84,7 +84,7 @@ const CircletoCircleCollision: NextPage = () => {
     update();
 
     const hMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(
+      const client = Utils.getClientPos(
         canvasRef.current,
         event,
         width,

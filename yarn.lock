@@ -228,6 +228,16 @@
     "@babel/helper-validator-identifier" "^7.18.6"
     "to-fast-properties" "^2.0.0"
 
+"@babylonjs/core@^5.22.0", "@babylonjs/core@^5.25.0":
+  "integrity" "sha512-pjUCrT5OPuJ0UU3bPtzovkRK+Xxl9bd1pIPG7aulqsC2Ci/hxiDNL2SwQnX9J/lcV5x6LTDyMUJ0IXSW8W+2sw=="
+  "resolved" "https://registry.npmjs.org/@babylonjs/core/-/core-5.25.0.tgz"
+  "version" "5.25.0"
+
+"@babylonjs/loaders@^5.25.0":
+  "integrity" "sha512-JMSjypYIRRzyBfvBfvjNsOfnU5ZxPrJKg8EvYJs3DBY1PYfkxvZdh22iJodLo5qFBcEe7CvSbmzKGVbb3dw98A=="
+  "resolved" "https://registry.npmjs.org/@babylonjs/loaders/-/loaders-5.25.0.tgz"
+  "version" "5.25.0"
+
 "@emotion/babel-plugin@^11.7.1":
   "integrity" "sha512-Pr/7HGH6H6yKgnVFNEj2MVlreu3ADqftqjqwUvDy/OJzKFgxKeTQ+eeUf20FOTuHVkDON2iNa25rAXVYtWJCjw=="
   "resolved" "https://registry.npmjs.org/@emotion/babel-plugin/-/babel-plugin-11.9.2.tgz"
@@ -822,6 +832,11 @@
     "@babel/runtime" "^7.7.2"
     "cosmiconfig" "^6.0.0"
     "resolve" "^1.12.0"
+
+"babylonjs-gltf2interface@^5.22.0":
+  "integrity" "sha512-udvZZgXZoLsrBXG2DP+QL+2S4PFGUND+MRRhYjLtHn/cYp+Y4FqIedAK0C8OasM/E262uq1dFK0nrqnZ/rQZ5A=="
+  "resolved" "https://registry.npmjs.org/babylonjs-gltf2interface/-/babylonjs-gltf2interface-5.25.0.tgz"
+  "version" "5.25.0"
 
 "balanced-match@^1.0.0":
   "integrity" "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="

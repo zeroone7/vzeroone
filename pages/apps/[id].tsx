@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 
+import BabylonJS from "../../components/apps/BabylonJS";
+import BakedLighting from "../../components/apps/BakedLighting";
+import Product3D from "../../components/apps/Product3D";
 import SoapBubble from "../../components/apps/SoapBubble";
 // import Slider from "../../components/apps/Slider";
 import Loader from "../../components/apps/Loader";
@@ -23,24 +26,19 @@ import Steering from "../../components/apps/Steering";
 
 const AppDetail: NextPage = () => {
   const router = useRouter();
-  const { id, category, name, component } = router.query;
+  const { component } = router.query;
+  // const { id, category, name, component } = router.query;
 
   const appItem = () => {
     switch (component) {
-      case "SoapBubble":
-        return <SoapBubble />
-      // case "Slider":
-      //   return <Slider />
-      case "Loader":
-        return <Loader />
-      // case "Redux":
-      //   return <Redux />
-      case "TextAnimation":
-        return <TextAnimation />
-      case "GlowButton":
-        return <GlowButton />
+      case "BabylonJS":
+        return <BabylonJS />
       case "CodingMath":
         return <CodingMath />
+      case "Product3D":
+        return <Product3D />
+      case "BakedLighting":
+        return <BakedLighting />
       case "ParticleRegen":
         return <ParticleRegen />
       case "CircletoCircleCollision":
@@ -65,6 +63,18 @@ const AppDetail: NextPage = () => {
         return <SpiralCircle />
       case "Steering":
         return <Steering />
+      case "SoapBubble":
+        return <SoapBubble />
+      // case "Slider":
+      //   return <Slider />
+      case "Loader":
+        return <Loader />
+      // case "Redux":
+      //   return <Redux />
+      case "TextAnimation":
+        return <TextAnimation />
+      case "GlowButton":
+        return <GlowButton />
       default:
         break;
     }

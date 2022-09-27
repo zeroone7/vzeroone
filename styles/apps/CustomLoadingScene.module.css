@@ -1,0 +1,10 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section canvas {
+  display: block;
+  background: white;
+}

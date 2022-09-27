@@ -9,7 +9,42 @@ import Easing from "../lib/easing";
 import Model from "../lib/model";
 import Vector from "../lib/vector";
 import Particle from "../lib/particle";
-import { render } from "react-dom";
+
+type Point = {
+  x: number,
+  y: number,
+};
+
+type Circle = {
+  x: number;
+  y: number;
+  radius: number;
+};
+
+type Rectangle = {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+};
+
+type Line = {
+  startPoint: Point,
+  endPoint: Point,
+};
+
+type Spring = {
+  point: Point;
+  length: number;
+  k: number;
+};
+
+type Shape = {
+  x: number;
+  y: number;
+  points: Array<Point>;
+  offset: Array<Point>;
+}
 
 const CoadingMath: NextPage = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -810,8 +845,8 @@ const CoadingMath: NextPage = () => {
         radius: 50 + Math.random() * 100,
       };
 
-    const hMouseMove = (e: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, e, width, height)!;
+    const hMouseMove = (event: MouseEvent) => {
+      const client = Utils.getClientPos(canvasRef.current, event, width, height)!;
 
       c1.x = client.x;
       c1.y = client.y;
@@ -849,7 +884,7 @@ const CoadingMath: NextPage = () => {
     };
 
     const hMouseMove = (event: MouseEvent) => {
-      const pos = Utils.getMousePos(canvasRef.current, event, width, height);
+      const pos = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!pos) return;
 
       if (Utils.circlePointCollision(pos?.x, pos?.y, circle)) {
@@ -907,7 +942,7 @@ const CoadingMath: NextPage = () => {
     canvasRef?.current?.addEventListener("mousemove", (event) => {
       ctx.clearRect(0, 0, width, height);
 
-      const pos = Utils.getMousePos(canvasRef.current, event, width, height);
+      const pos = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!pos) return;
 
       if (Utils.pointInRect(pos.x, pos.y, rect)) {
@@ -938,7 +973,7 @@ const CoadingMath: NextPage = () => {
     weight.friction = 0.5 + Math.random() * 0.5;
 
     const hMoveMove = (event: MouseEvent) => {
-      const pos = Utils.getMousePos(canvasRef.current, event, width, height);
+      const pos = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!pos) return;
 
       pSpring.x = pos.x;
@@ -994,7 +1029,7 @@ const CoadingMath: NextPage = () => {
     weight.friction = 0.95;
 
     const hMouseMove = (event: MouseEvent) => {
-      const pos = Utils.getMousePos(canvasRef.current, event, width, height);
+      const pos = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!pos) return;
 
       pSpring.x = pos.x;
@@ -1142,7 +1177,7 @@ const CoadingMath: NextPage = () => {
     weight.friction = 0.95;
 
     const hMouseMove = (event: MouseEvent) => {
-      const pos = Utils.getMousePos(canvasRef.current, event, width, height);
+      const pos = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!pos) return;
 
       pSpring.x = pos.x;
@@ -1239,7 +1274,7 @@ const CoadingMath: NextPage = () => {
     weight.addSpring(pSpring2);
 
     const hMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height);
+      const client = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!client) return;
 
       pSpring1.point.x = client.x;
@@ -2216,7 +2251,7 @@ const CoadingMath: NextPage = () => {
     update();
 
     const hMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height);
+      const client = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!client) return;
 
       rotSpeed = (client.x - width / 2) * 0.00005;
@@ -2300,7 +2335,7 @@ const CoadingMath: NextPage = () => {
     update();
 
     const hMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height);
+      const client = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!client) return;
 
       rotSpeed = (client.x - width / 2) * 0.00005;
@@ -2387,7 +2422,7 @@ const CoadingMath: NextPage = () => {
     update();
 
     const hMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height);
+      const client = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!client) return;
 
       rotSpeed = (client.x - width / 2) * 0.00005;
@@ -2459,7 +2494,7 @@ const CoadingMath: NextPage = () => {
     update();
 
     const hMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height);
+      const client = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!client) return;
 
       rotSpeed = (client.x - width / 2) * 0.00005;
@@ -2743,7 +2778,7 @@ const CoadingMath: NextPage = () => {
     update();
 
     const hMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height);
+      const client = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!client) return;
 
       target.x = client.x;
@@ -2798,7 +2833,7 @@ const CoadingMath: NextPage = () => {
     update();
 
     const hMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height);
+      const client = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!client) return;
 
       target.x = client.x;
@@ -2853,7 +2888,7 @@ const CoadingMath: NextPage = () => {
     update();
 
     const hClick = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height);
+      const client = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!client) return;
 
       target.x = client.x;
@@ -2911,7 +2946,7 @@ const CoadingMath: NextPage = () => {
     update();
 
     const hMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height);
+      const client = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!client) return;
 
       target.x = client.x;
@@ -2953,7 +2988,7 @@ const CoadingMath: NextPage = () => {
     };
 
     const hMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height);
+      const client = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!client) return;
 
       tAngle = Utils.map(client.x, 0, width, -Math.PI, Math.PI);
@@ -2994,7 +3029,7 @@ const CoadingMath: NextPage = () => {
     };
 
     const hClick = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height);
+      const client = Utils.getClientPos(canvasRef.current, event, width, height);
       if (!client) return;
 
       target.x = client.x;
@@ -3194,7 +3229,7 @@ const CoadingMath: NextPage = () => {
     let clickPoint: {x: number, y: number};
 
     const onMouseDown = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height)!;
+      const client = Utils.getClientPos(canvasRef.current, event, width, height)!;
       clickPoint = Utils.getSelectPoint([p0, p1, p2, p3], client.x, client.y)!;
       if (clickPoint) {
         document.addEventListener("mousemove", onMouseMove);
@@ -3203,7 +3238,7 @@ const CoadingMath: NextPage = () => {
     };
 
     const onMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height)!;
+      const client = Utils.getClientPos(canvasRef.current, event, width, height)!;
       clickPoint.x = client.x;
       clickPoint.y = client.y;
       update();
@@ -3261,7 +3296,7 @@ const CoadingMath: NextPage = () => {
     let clickPoint: {x: number, y: number};
 
     const onMouseDown = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height)!;
+      const client = Utils.getClientPos(canvasRef.current, event, width, height)!;
       clickPoint = Utils.getSelectPoint([p0, p1, p2, p3], client.x, client.y)!;
       if (clickPoint) {
         document.addEventListener("mousemove", onMouseMove);
@@ -3270,7 +3305,7 @@ const CoadingMath: NextPage = () => {
     };
 
     const onMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height)!;
+      const client = Utils.getClientPos(canvasRef.current, event, width, height)!;
       clickPoint.x = client.x;
       clickPoint.y = client.y;
       update();
@@ -3297,13 +3332,196 @@ const CoadingMath: NextPage = () => {
     update();
   };
 
-  useEffect(() => {
-    // if (!canvasRef.current) return;
-    // if (!canvasRef.current.getContext("2d")) return;
+  const episode34_particle_line_collision = (
+    ctx: CanvasRenderingContext2D,
+    width: number,
+    height: number
+  ) => {
+    const particle = {
+      x: width / 2,
+      y: height / 2,
+      vx: Math.random() * 10 - 5,
+      vy: Math.random() * 10 - 5,
+    };
 
+    const lines: Array<Line> = [];
+
+    for (let i = 0; i < 10; i++) {
+      lines[i] = {
+        startPoint: {
+          x: Math.random() * width,
+          y: Math.random() * height,
+        },
+        endPoint: {
+          x: Math.random() * width,
+          y: Math.random() * height,
+        }
+      }
+    }
+
+    const update = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      Draw.lines(ctx, lines);
+
+      const p0 = {
+        x: particle.x,
+        y: particle.y,
+      };
+
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+      ctx.fillRect(particle.x - 2, particle.y - 2, 4, 4);
+
+      const p1 = {
+        x: particle.x,
+        y: particle.y,
+      };
+
+      for (let i = 0; i < lines.length; i++) {
+        const p2 = lines[i].startPoint;
+        const p3 = lines[i].endPoint;
+
+        const intersect = Utils.segementIntersect({ startPoint: p0, endPoint: p1 }, { startPoint: p2, endPoint: p3 });
+        if (intersect) {
+          Draw.arc(ctx, intersect, 20, "red", "stroke");
+          return;
+        }
+      }
+
+      requestAnimationFrame(update);
+    };
+    update();
+  };
+
+  const episode34_shape_collision = (
+    ctx: CanvasRenderingContext2D,
+    width: number,
+    height: number
+  ) => {
+    const star1 = {
+      x: 200,
+      y: 200,
+      points: [
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+      ],
+      offset: [
+        { x: 100, y: 0 },
+        { x: 40, y: 29 },
+        { x: 31, y: 95 },
+        { x: -15, y: 48 },
+        { x: -81, y: 59 },
+        { x: -50, y: 0 },
+        { x: -81, y: -59 },
+        { x: -15, y: -48 },
+        { x: 31, y: -95 },
+        { x: 40, y: -29 },
+      ],
+    };
+
+    const star2 = {
+      x: 600,
+      y: 500,
+      points: [
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+      ],
+      offset: [
+        { x: 100, y: 0 },
+        { x: 40, y: 29 },
+        { x: 31, y: 95 },
+        { x: -15, y: 48 },
+        { x: -81, y: 59 },
+        { x: -50, y: 0 },
+        { x: -81, y: -59 },
+        { x: -15, y: -48 },
+        { x: 31, y: -95 },
+        { x: 40, y: -29 },
+      ],
+    };
+
+    const drawStar = (star: Shape) => {
+        ctx.beginPath();
+        ctx.moveTo(star.points[0].x, star.points[0].y);
+        for (let i = 1; i < star.points.length; i++) {
+          ctx.lineTo(star.points[i].x, star.points[i].y);
+        }
+        ctx.closePath();
+        ctx.fill();
+    };
+
+    const updateStar = (star: Shape) => {
+      for (let i = 0; i < star.points.length; i++) {
+        star.points[i].x = star.x + star.offset[i].x;
+        star.points[i].y = star.y + star.offset[i].y;
+      }
+    };
+
+    const isCollision = (star: Shape, other: Shape) => {
+      for (let i = 0; i < star.points.length; i++) {
+        const p0 = star.points[i];
+        const p1 = star.points[(i + 1) % star.points.length];
+
+        for (let j = 0; j < other.points.length; j++) {
+          const p2 = other.points[j];
+          const p3 = other.points[(j + 1) % other.points.length];
+
+          let line1 = { startPoint: p0, endPoint: p1 };
+          let line2 = { startPoint: p2, endPoint: p3 };
+
+          if (Utils.segementIntersect(line1, line2)) {
+            return true;
+          }
+        }
+      }
+
+      return false;
+    };
+
+    const hMouseMove = (event: MouseEvent) => {
+      ctx.clearRect(0, 0, width, height);
+      
+      const client = Utils.getClientPos(canvasRef.current, event, width, height);
+      if (!client) return;
+
+      star1.x = client.x;
+      star1.y = client.y;
+      updateStar(star1);
+      updateStar(star2);
+
+      if (isCollision(star1, star2)) {
+        ctx.fillStyle = "red";
+      } else {
+        ctx.fillStyle = "black";
+      }
+      
+      drawStar(star1);
+      drawStar(star2);
+    };
+
+    document.addEventListener("mousemove", hMouseMove);
+  };
+
+  useEffect(() => {
     const canvas = canvasRef.current!;
     const ctx = canvas.getContext("2d")!;
-
     const width = (canvas.width = window.innerWidth);
     const height = (canvas.height = window.innerHeight * 0.92);
 
@@ -3380,6 +3598,8 @@ const CoadingMath: NextPage = () => {
     // episode32_interactive_intersect(ctx, width, height);
     // episode33_parallel(ctx, width, height);
     // episode33_interactive_intersect(ctx, width, height);
+    // episode34_particle_line_collision(ctx, width, height);
+    episode34_shape_collision(ctx, width, height);
   }, []);
 
   return (

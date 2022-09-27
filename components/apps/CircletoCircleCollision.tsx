@@ -35,7 +35,7 @@ const CircletoCircleCollision: NextPage = () => {
     const hMouseMove = (event: MouseEvent) => {
       ctx.clearRect(0, 0, width, height);
 
-      const client = Utils.getMousePos(canvasRef.current, event, width, height)!;
+      const client = Utils.getClientPos(canvasRef.current, event, width, height)!;
       c1.x = client.x;
       c1.y = client.y;
 

@@ -201,17 +201,18 @@ export default class Utils {
   //   }
   // }
 
-  static getMousePos(
+  static getClientPos(
     canvas: HTMLCanvasElement | null,
-    e: MouseEvent,
+    event: MouseEvent,
     width: number,
     height: number
   ) {
-    const rect = canvas?.getBoundingClientRect()!;
+    const clientRect = canvas?.getBoundingClientRect();
+    if (!clientRect) return;
 
     return {
-      x: ((e.clientX - rect.left) / (rect.right - rect.left)) * width,
-      y: ((e.clientY - rect.top) / (rect.bottom - rect.top)) * height,
+      x: ((event.clientX - clientRect.left) / (clientRect.right - clientRect.left)) * width,
+      y: ((event.clientY - clientRect.top) / (clientRect.bottom - clientRect.top)) * height,
     };
   }
 

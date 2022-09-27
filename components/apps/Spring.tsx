@@ -64,7 +64,7 @@ const CircletoCircleCollision: NextPage = () => {
     update();
 
     const hMouseMove = (event: MouseEvent) => {
-      const client = Utils.getMousePos(canvasRef.current, event, width, height)!;
+      const client = Utils.getClientPos(canvasRef.current, event, width, height)!;
 
       pSpring1.point.x = client.x;
       pSpring1.point.y = client.y;

@@ -33,7 +33,7 @@ type Line = {
 };
 
 type Spring = {
-  point: { x: number; y: number };
+  point: Point;
   length: number;
   k: number;
 };
