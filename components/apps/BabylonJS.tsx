@@ -19,7 +19,11 @@ import type { NextPage } from "next"
 // import { PhysicsForces } from "../babylonjs/PhysicsForces";
 // import { Raycasting } from "../babylonjs/Raycasting";
 // import { Animations } from "../babylonjs/Animations";
-import { CharacterAnimations } from "../babylonjs/CharacterAnimations";
+// import { CharacterAnimations } from "../babylonjs/CharacterAnimations";
+// import { CutScene } from "../babylonjs/CutScene";
+// import { AniEvent } from "../babylonjs/AniEvent";
+// import { AniBlending } from "../babylonjs/AniBlending";
+import { AudioExample } from "../babylonjs/AudioExample";
 
 const BabylonJS: NextPage = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -45,7 +49,10 @@ const BabylonJS: NextPage = () => {
     // new PhysicsForces(canvas);
     // new Raycasting(canvas);
     // new Animations(canvas);
-    new CharacterAnimations(canvas);
+    // new CutScene(canvas);
+    // new AniEvent(canvas);
+    // new AniBlending(canvas);
+    new AudioExample(canvas);
   }, []);
 
   return (

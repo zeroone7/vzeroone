@@ -5,10 +5,12 @@ import {
   Vector3,
   SceneLoader,
   CubeTexture,
+  AnimationGroup,
+  AsyncCoroutine,
 } from "@babylonjs/core";
 import "@babylonjs/loaders";
 
-export class CharacterAnimations {
+export class AniBlending {
   engine: Engine;
   scene: Scene;
 
@@ -37,7 +39,7 @@ export class CharacterAnimations {
     scene.environmentTexture = texEnv;
     scene.createDefaultSkybox(texEnv, true, 1000, 0.25);
 
-    const camera = new FreeCamera("camera", new Vector3(0, 2, -10), this.scene);
+    const camera = new FreeCamera("camera", new Vector3(0, 2, -6), this.scene);
     camera.attachControl();
     camera.minZ = 0.5;
     camera.speed = 0.5;
@@ -46,27 +48,53 @@ export class CharacterAnimations {
   }
 
   async CreateEnvironment(): Promise<void> {
-    await SceneLoader.ImportMeshAsync(
-      "",
-      "/models/",
-      "Prototype_Level.glb",
-      this.scene
-    );
+    await SceneLoader.ImportMeshAsync("", "/models/", "Prototype_Level.glb");
   }
 
   async CreateCharacter(): Promise<void> {
     const { meshes, animationGroups } = await SceneLoader.ImportMeshAsync(
       "",
       "/models/",
-      "Character.glb",
-      this.scene
+      "character_blending.glb"
     );
 
-    meshes[0].rotate(Vector3.Up(), Math.PI);
-    console.log("Animation groups", animationGroups);
-    animationGroups[0].stop();
-    animationGroups[2].play(true);
+    meshes[0].rotate(Vector3.Up(), -Math.PI);
+
+    const idle = animationGroups[0];
+    const run = animationGroups[1];
+
+    this.scene.onPointerDown = (evt) => {
+      if (evt.button === 1) {
+        this.scene.onBeforeRenderObservable.runCoroutineAsync(
+          this.animationBlending(run, idle)
+        );
+      }
+
+      if (evt.button === 0) {
+        this.scene.onBeforeRenderObservable.runCoroutineAsync(
+          this.animationBlending(idle, run)
+        );
+      }
+    };
 
     this.engine.hideLoadingUI();
+  }
+
+  *animationBlending(
+    aniTo: AnimationGroup,
+    aniFrom: AnimationGroup
+  ): AsyncCoroutine<void> {
+    let currentWeight = 1;
+    let newWeight = 0;
+
+    aniTo.play(true);
+
+    while (newWeight < 1) {
+      newWeight += 0.01;
+      currentWeight -= 0.01;
+      aniTo.setWeightForAllAnimatables(newWeight);
+      aniFrom.setWeightForAllAnimatables(currentWeight);
+      yield;
+    }
   }
 }
