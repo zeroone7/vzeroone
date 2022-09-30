@@ -40,16 +40,16 @@ const CircletoCircleCollision: NextPage = () => {
       hFrame = requestAnimationFrame(update);
     };
 
-    const hMouseMove = (event: MouseEvent) => {
+    const hPointerMove = (event: PointerEvent) => {
       const client = Utils.getClientPos(canvasRef.current, event, width, height)!;
 
       tAngle = Utils.map(client.x, 0, width, -Math.PI, Math.PI);
     };
 
-    canvas.addEventListener("mousemove", hMouseMove);
+    canvas.addEventListener("pointermove", hPointerMove);
 
     return () => {
-      canvas.removeEventListener("mousemove", hMouseMove);
+      canvas.removeEventListener("pointermove", hPointerMove);
       cancelAnimationFrame(hFrame);
     }
   }, []);

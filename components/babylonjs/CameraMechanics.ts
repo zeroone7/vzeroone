@@ -7,6 +7,7 @@ import {
   ArcRotateCamera,
   SceneLoader,
 } from "@babylonjs/core";
+import "@babylonjs/loaders";
 
 export class CameraMechanics {
   engine: Engine;

@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { useRouter } from "next/router";
 
 import Tetris from "../../components/games/Tetris";
-import Puzzle from "../../components/games/Puzzle";
+// import Puzzle from "../../components/games/Puzzle";
 
 const GameDetail: NextPage = () => {
   const router = useRouter();
@@ -12,8 +12,8 @@ const GameDetail: NextPage = () => {
     switch (component) {
       case "Tetris":
         return <Tetris />
-      case "Puzzle":
-        return <Puzzle />
+      // case "Puzzle":
+      //   return <Puzzle />
       default:
         break;
     }

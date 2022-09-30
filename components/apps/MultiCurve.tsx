@@ -98,15 +98,15 @@ const CircletoCircleCollision: NextPage = () => {
       ctx.fillText("t = " + Utils.roundToPlaces(maxT, 2), 200, 50);
     };
 
-    const hClick = () => {
+    const hPointerDown = () => {
       isAnimate = true;
       update();
     };
 
-    canvas.addEventListener("click", hClick);
+    canvas.addEventListener("pointerdown", hPointerDown);
 
     return () => {
-      canvas.removeEventListener("click", hClick);
+      canvas.removeEventListener("pointerdown", hPointerDown);
       cancelAnimationFrame(hFrame);
     }
   }, []);

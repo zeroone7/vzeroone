@@ -56,7 +56,6 @@ const CircletoCircleCollision: NextPage = () => {
     update();
 
     return () => {
-      console.log("Clean Up");
       cancelAnimationFrame(hFrame);
     }
   }, []);

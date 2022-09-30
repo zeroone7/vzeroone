@@ -21,7 +21,7 @@ const Game: NextPage<GamesProps> = () => {
 
   const games = [
     { id: 1, category: "puzzle", name: "Tetris", component: "Tetris" },
-    { id: 2, category: "puzzle", name: "Puzzle", component: "Puzzle" },
+    // { id: 2, category: "puzzle", name: "Puzzle", component: "Puzzle" },
   ];
 
   const appItem = games.map((game) => (

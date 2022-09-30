@@ -40,6 +40,7 @@ const App: NextPage = () => {
 
   const apps = [
     { category: "3D", name: "BakedLighting", component: "BakedLighting" },
+    { category: "3D", name: "CharacterAnimation", component: "CharacterAnimation" },
     { category: "3D", name: "Product3D", component: "Product3D" },
     { category: "canvas", name: "ParticleRegen", component: "ParticleRegen" },
     {

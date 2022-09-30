@@ -10,7 +10,16 @@ import type { NextPage } from "next"
 // import { LightShadows } from "../babylonjs/LightShadows";
 // import { BakedLighting } from "../babylonjs/BakedLighting";
 // import { CustomLoading } from "../babylonjs/CustomLoading";
-import { CameraMechanics } from "../babylonjs/CameraMechanics";
+// import { CameraMechanics } from "../babylonjs/CameraMechanics";
+// import { MeshActions } from "../babylonjs/MeshActions";
+// import { FirstPersonCtrl } from "../babylonjs/FirstPersonCtrl";
+// import { PhysicsImposters } from "../babylonjs/PhysicsImposters";
+// import { CollisionTriggers } from "../babylonjs/CollisionTriggers";
+// import { PhysicsVelocity } from "../babylonjs/PhysicsVelocity";
+// import { PhysicsForces } from "../babylonjs/PhysicsForces";
+// import { Raycasting } from "../babylonjs/Raycasting";
+// import { Animations } from "../babylonjs/Animations";
+import { CharacterAnimations } from "../babylonjs/CharacterAnimations";
 
 const BabylonJS: NextPage = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -27,7 +36,16 @@ const BabylonJS: NextPage = () => {
     // new LightShadows(canvas);
     // new BakedLighting(canvas);
     // new CustomLoading(canvas);
-    new CameraMechanics(canvas);
+    // new CameraMechanics(canvas);
+    // new MeshActions(canvas);
+    // new FirstPersonCtrl(canvas);
+    // new PhysicsImposters(canvas);
+    // new CollisionTriggers(canvas);
+    // new PhysicsVelocity(canvas);
+    // new PhysicsForces(canvas);
+    // new Raycasting(canvas);
+    // new Animations(canvas);
+    new CharacterAnimations(canvas);
   }, []);
 
   return (

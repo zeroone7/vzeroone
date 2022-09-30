@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { useRouter } from "next/router";
 
 import BabylonJS from "../../components/apps/BabylonJS";
+import CharacterAnimation from "../../components/apps/CharacterAnimation";
 import BakedLighting from "../../components/apps/BakedLighting";
 import Product3D from "../../components/apps/Product3D";
 import SoapBubble from "../../components/apps/SoapBubble";
@@ -35,10 +36,12 @@ const AppDetail: NextPage = () => {
         return <BabylonJS />
       case "CodingMath":
         return <CodingMath />
-      case "Product3D":
-        return <Product3D />
       case "BakedLighting":
         return <BakedLighting />
+      case "CharacterAnimation":
+        return <CharacterAnimation />
+      case "Product3D":
+        return <Product3D />
       case "ParticleRegen":
         return <ParticleRegen />
       case "CircletoCircleCollision":

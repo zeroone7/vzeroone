@@ -18,7 +18,7 @@ const CircletoCircleCollision: NextPage = () => {
 
     ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
 
-    const hMouseMove = (event: MouseEvent) => {
+    const hPointerMove = (event: PointerEvent) => {
       ctx.clearRect(0, 0, width, height);
 
       const pos = Utils.getClientPos(canvasRef.current, event, width, height)!;
@@ -32,10 +32,10 @@ const CircletoCircleCollision: NextPage = () => {
       ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
     };
 
-    canvas.addEventListener("mousemove", hMouseMove);
+    canvas.addEventListener("pointermove", hPointerMove);
 
     return () => {
-      canvas.removeEventListener("mousemove", hMouseMove);
+      canvas.removeEventListener("pointermove", hPointerMove);
     };
   }, []);
 

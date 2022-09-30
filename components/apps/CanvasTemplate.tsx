@@ -23,14 +23,14 @@ const CanvasTemplate: NextPage = () => {
     };
     update();
 
-    const hMouseMove = (event: MouseEvent) => {
+    const hPointerMove = (event: PointerEvent) => {
       const client = Utils.getClientPos(canvasRef.current, event, width, height)!;
     };
 
-    canvas.addEventListener("mousemove", hMouseMove);
+    canvas.addEventListener("pointermove", hPointerMove);
 
     return () => {
-      canvas.removeEventListener("mousemove", hMouseMove);
+      canvas.removeEventListener("pointermove", hPointerMove);
       cancelAnimationFrame(hFrame);
     }
   }, []);

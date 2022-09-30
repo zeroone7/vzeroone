@@ -85,7 +85,7 @@ const CircletoCircleCollision: NextPage = () => {
     };
     update();
 
-    const hMouseMove = (event: MouseEvent) => {
+    const hPointerMove = (event: PointerEvent) => {
       const client = Utils.getClientPos(
         canvasRef.current,
         event,
@@ -97,10 +97,10 @@ const CircletoCircleCollision: NextPage = () => {
       yPos = (client.y - height / 2) * 2;
     };
 
-    canvas.addEventListener("mousemove", hMouseMove);
+    canvas.addEventListener("pointermove", hPointerMove);
 
     return () => {
-      canvas.removeEventListener("mousemove", hMouseMove);
+      canvas.removeEventListener("pointermove", hPointerMove);
       cancelAnimationFrame(hFrame);
     };
   }, []);
