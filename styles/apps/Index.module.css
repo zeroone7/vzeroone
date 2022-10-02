@@ -12,6 +12,14 @@
   cursor: pointer;
 }
 
-.app__item span {
+.app__item .threed {
+  color: dodgerblue;
+}
+
+.app__item .css {
+  color: yellowgreen;
+}
+
+.app__item .canvas {
   color: hotpink;
 }

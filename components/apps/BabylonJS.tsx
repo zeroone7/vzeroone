@@ -22,8 +22,8 @@ import type { NextPage } from "next"
 // import { CharacterAnimations } from "../babylonjs/CharacterAnimations";
 // import { CutScene } from "../babylonjs/CutScene";
 // import { AniEvent } from "../babylonjs/AniEvent";
-// import { AniBlending } from "../babylonjs/AniBlending";
-import { AudioExample } from "../babylonjs/AudioExample";
+import { AniBlending } from "../babylonjs/AniBlending";
+// import { AudioExample } from "../babylonjs/AudioExample";
 
 const BabylonJS: NextPage = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -51,8 +51,8 @@ const BabylonJS: NextPage = () => {
     // new Animations(canvas);
     // new CutScene(canvas);
     // new AniEvent(canvas);
-    // new AniBlending(canvas);
-    new AudioExample(canvas);
+    new AniBlending(canvas);
+    // new AudioExample(canvas);
   }, []);
 
   return (

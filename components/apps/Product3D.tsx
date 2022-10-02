@@ -1,4 +1,4 @@
-import styles from "../../styles/Canvas.module.css";
+import styles from "../../styles/apps/Product3D.module.css";
 
 import { useEffect, useRef } from "react";
 import type { NextPage } from "next";

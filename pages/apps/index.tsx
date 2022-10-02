@@ -43,6 +43,30 @@ const App: NextPage = () => {
     { category: "3D", name: "CharacterAnimation", component: "CharacterAnimation" },
     { category: "3D", name: "Product3D", component: "Product3D" },
     { category: "canvas", name: "ParticleRegen", component: "ParticleRegen" },
+    { category: "canvas", name: "Spring", component: "Spring" },
+    {
+      category: "canvas",
+      name: "MultiGravity",
+      component: "MultiGravity",
+    },
+    { category: "canvas", name: "MultiCurve", component: "MultiCurve" },
+    {
+      category: "canvas",
+      name: "PerspectiveLetter",
+      component: "PerspectiveLetter",
+    },
+    { category: "canvas", name: "SpiralStar", component: "SpiralStar" },
+    { category: "canvas", name: "SpiralCircle", component: "SpiralCircle" },
+    { category: "canvas", name: "Steering", component: "Steering" },
+    { category: "css", name: "CubesHover", component: "CubesHover" },
+    { category: "css", name: "SoapBubble", component: "SoapBubble" },
+    { category: "css", name: "Loader", component: "Loader" },
+    {
+      category: "css",
+      name: "TextAnimation",
+      component: "TextAnimation",
+    },
+    { category: "css", name: "GlowButton", component: "GlowButton" },
     {
       category: "canvas",
       name: "CircletoCircleCollision",
@@ -63,38 +87,28 @@ const App: NextPage = () => {
       name: "RecttoPointCollision",
       component: "RecttoPointCollision",
     },
-    { category: "canvas", name: "Spring", component: "Spring" },
-    {
-      category: "canvas",
-      name: "MultiGravity",
-      component: "MultiGravity",
-    },
-    { category: "canvas", name: "MultiCurve", component: "MultiCurve" },
-    {
-      category: "canvas",
-      name: "PerspectiveLetter",
-      component: "PerspectiveLetter",
-    },
-    { category: "canvas", name: "SpiralStar", component: "SpiralStar" },
-    { category: "canvas", name: "SpiralCircle", component: "SpiralCircle" },
-    { category: "canvas", name: "Steering", component: "Steering" },
-    { category: "css", name: "SoapBubble", component: "SoapBubble" },
-    { category: "css", name: "Loader", component: "Loader" },
-    {
-      category: "css",
-      name: "TextAnimation",
-      component: "TextAnimation",
-    },
-    { category: "css", name: "GlowButton", component: "GlowButton" },
     { category: "3D", name: "BabylonJS", component: "BabylonJS" },
     { category: "canvas", name: "CodingMath", component: "CodingMath" },
     // { category: "css", name: "Slider", component: "Slider" },
     // { category: "script", name: "Redux", component: "Redux" },
   ];
 
+  const categoryColor = (category: string) => {
+    switch (category) {
+      case "3D":
+        return styles.threed;
+      case "canvas":
+        return styles.canvas;
+      case "css":
+        return styles.css;
+      default:
+        break;
+    }
+  };
+  
   appItem = apps.map((app, id) => (
     <li key={id} onClick={() => hClick({ id, ...app })}>
-      <span>{app.category}</span>
+      <span className={categoryColor(app.category)}>{app.category}</span>
       <p>{app.name}</p>
     </li>
   ));
