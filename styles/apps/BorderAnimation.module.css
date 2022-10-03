@@ -1,0 +1,61 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 200px;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.section .box::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-image: conic-gradient(transparent, transparent, transparent, hotpink);
+  animation: animate 4s linear infinite;
+  animation-delay: -2s;
+}
+
+.section .box::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-image: conic-gradient(transparent, transparent, transparent, dodgerblue);
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.section .box span {
+  position: absolute;
+  inset: 5px;
+  border-radius: 16px;
+  background: #121212;
+  z-index: 1;
+}
+
+.section .box h2 {
+  position: relative;
+  z-index: 2;
+  font-size: 7rem;
+  color: hotpink;
+}

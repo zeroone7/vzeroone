@@ -16,6 +16,7 @@ import CubesHover from "../../components/apps/CubesHover";
 import GradientBorderCard from "../../components/apps/GradientBorderCard";
 import GradientBorderInput from "../../components/apps/GradientBorderInput";
 import GradientCircleLoading from "../../components/apps/GradientCircleLoading";
+import BorderAnimation from "../../components/apps/BorderAnimation";
 import GlowHoverButton from "../../components/apps/GlowHoverButton";
 import SoapBubble from "../../components/apps/SoapBubble";
 import Loader from "../../components/apps/Loader";
@@ -67,6 +68,8 @@ const AppDetail: NextPage = () => {
         return <GradientBorderInput />
       case "GradientCircleLoading":
         return <GradientCircleLoading />
+      case "BorderAnimation":
+        return <BorderAnimation />
       case "GlowHoverButton":
         return <GlowHoverButton />
       case "SoapBubble":
