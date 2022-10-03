@@ -39,9 +39,13 @@ const App: NextPage = () => {
   };
 
   const apps = [
-    { category: "3D", name: "BakedLighting", component: "BakedLighting" },
-    { category: "3D", name: "CharacterAnimation", component: "CharacterAnimation" },
-    { category: "3D", name: "Product3D", component: "Product3D" },
+    { category: "threeD", name: "BakedLighting", component: "BakedLighting" },
+    {
+      category: "threeD",
+      name: "CharacterAnimation",
+      component: "CharacterAnimation",
+    },
+    { category: "threeD", name: "Product3D", component: "Product3D" },
     { category: "canvas", name: "ParticleRegen", component: "ParticleRegen" },
     { category: "canvas", name: "Spring", component: "Spring" },
     {
@@ -59,6 +63,11 @@ const App: NextPage = () => {
     { category: "canvas", name: "SpiralCircle", component: "SpiralCircle" },
     { category: "canvas", name: "Steering", component: "Steering" },
     { category: "css", name: "CubesHover", component: "CubesHover" },
+    {
+      category: "css",
+      name: "GradientBorderCard",
+      component: "GradientBorderCard",
+    },
     { category: "css", name: "SoapBubble", component: "SoapBubble" },
     { category: "css", name: "Loader", component: "Loader" },
     {
@@ -87,10 +96,15 @@ const App: NextPage = () => {
       name: "RecttoPointCollision",
       component: "RecttoPointCollision",
     },
-    { category: "3D", name: "BabylonJS", component: "BabylonJS" },
+    { category: "threeD", name: "BabylonJS", component: "BabylonJS" },
     { category: "canvas", name: "CodingMath", component: "CodingMath" },
     // { category: "css", name: "Slider", component: "Slider" },
     // { category: "script", name: "Redux", component: "Redux" },
+    // {
+    //   category: "css",
+    //   name: "AniRadialMenu",
+    //   component: "AniRadialMenu",
+    // },
   ];
 
   const categoryColor = (category: string) => {
@@ -105,12 +119,16 @@ const App: NextPage = () => {
         break;
     }
   };
-  
+
   appItem = apps.map((app, id) => (
-    <li key={id} onClick={() => hClick({ id, ...app })}>
-      <span className={categoryColor(app.category)}>{app.category}</span>
-      <p>{app.name}</p>
-    </li>
+    <div className={styles.card} key={id} onClick={() => hClick({ id, ...app })}>
+      <span></span>
+      <div className={styles.content}>
+        {/* <span className={categoryColor(app.category)}>{app.category}</span> */}
+        <p>{app.category}</p>
+        <p>{app.name}</p>
+      </div>
+    </div>
   ));
 
   // const hOnChange = (e: SelectChangeEvent) => {
@@ -132,8 +150,9 @@ const App: NextPage = () => {
   // }, [selectApp]);
 
   return (
-    <>
+    <section className={styles.section}>
       <Header title="App | ZeroOne" />
+      {appItem}
 
       {/* <FormControl fullWidth>
         <InputLabel id="lbl-select">Age</InputLabel>
@@ -149,9 +168,7 @@ const App: NextPage = () => {
           <MenuItem value="script">Script</MenuItem>
         </Select>
       </FormControl> */}
-
-      <ul className={styles.app__item}>{appItem}</ul>
-    </>
+    </section>
   );
 };
 export default App;

@@ -1,0 +1,69 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.section .menu li {
+  position: absolute;
+  left: 0;
+  transform: rotate(0deg) translateX(110px);
+  transform-origin: 140px;
+  transition: 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.section .menu.active li {
+  transform: rotate(calc(360deg / 8 * var(--i))) translateX(0px);
+}
+
+.section .menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  color: var(--clr);
+  border: 2px solid var(--clr);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transform: rotate(calc(360deg / -8 * var(--i)));
+  transition: 1s;
+}
+
+.section .menu li a:hover {
+  background: var(--clr);
+  color: #333;
+  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 50px var(--clr);
+  transition: 0s;
+}
+
+.section .menu .toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #2f363e;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10000;
+  font-size: 2rem;
+  transition: transform 1.25s;
+}
+
+.section .menu.active .toggle {
+  transform: rotate(315deg);
+}

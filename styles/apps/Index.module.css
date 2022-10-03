@@ -1,4 +1,98 @@
-.app__item {
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.section .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 5px;
+  color: white;
+  transition: 0.5s;
+}
+
+.section .card:hover {
+  transform: translateY(-20px);
+}
+
+.section .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, gold, tomato);
+}
+
+.section .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, gold, tomato);
+  filter: blur(10px);
+}
+
+.section .card:nth-of-type(3n+2)::before,
+.section .card:nth-of-type(3n+2)::after {
+  background: linear-gradient(315deg, dodgerblue, tomato);
+}
+.section .card:nth-of-type(3n+3)::before,
+.section .card:nth-of-type(3n+3)::after {
+  background: linear-gradient(315deg, yellowgreen , lightblue);
+}
+
+/* .section .card.css::before,
+.section .card.css::after {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.section .card.canvas::before,
+.section .card.canvas::after {
+  background: linear-gradient(315deg, #4dff03 , #00d0ff);
+} */
+
+/* .section .card:nth-of-type(odd)::before,
+.section .card:nth-of-type(odd)::after {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+} */
+
+.section .card span {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.section .card span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.section .card .content {
+  position: relative;
+  z-index: 10;
+  padding: 5px 15px;
+}
+
+/* .app__item {
   display: flex;
   flex-wrap: wrap;
 }
@@ -22,4 +116,4 @@
 
 .app__item .canvas {
   color: hotpink;
-}
+} */

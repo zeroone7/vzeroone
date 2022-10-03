@@ -13,6 +13,7 @@ import SpiralStar from "../../components/apps/SpiralStar";
 import SpiralCircle from "../../components/apps/SpiralCircle";
 import Steering from "../../components/apps/Steering";
 import CubesHover from "../../components/apps/CubesHover";
+import GradientBorderCard from "../../components/apps/GradientBorderCard";
 import SoapBubble from "../../components/apps/SoapBubble";
 import Loader from "../../components/apps/Loader";
 import TextAnimation from "../../components/apps/TextAnimation";
@@ -25,6 +26,7 @@ import BabylonJS from "../../components/apps/BabylonJS";
 import CodingMath from "../../components/apps/CodingMath";
 // import Slider from "../../components/apps/Slider";
 // import Redux from "../../components/apps/Redux";
+// import AniRadialMenu from "../../components/apps/AniRadialMenu";
 
 const AppDetail: NextPage = () => {
   const router = useRouter();
@@ -57,6 +59,8 @@ const AppDetail: NextPage = () => {
         return <Steering />
       case "CubesHover":
         return <CubesHover />
+      case "GradientBorderCard":
+        return <GradientBorderCard />
       case "SoapBubble":
         return <SoapBubble />
       case "Loader":
@@ -81,6 +85,8 @@ const AppDetail: NextPage = () => {
       //   return <Slider />
       // case "Redux":
       //   return <Redux />
+      // case "AniRadialMenu":
+      //   return <AniRadialMenu />
       default:
         break;
     }
