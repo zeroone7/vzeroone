@@ -16,10 +16,10 @@ import CubesHover from "../../components/apps/CubesHover";
 import GradientBorderCard from "../../components/apps/GradientBorderCard";
 import GradientBorderInput from "../../components/apps/GradientBorderInput";
 import GradientCircleLoading from "../../components/apps/GradientCircleLoading";
+import GlowHoverButton from "../../components/apps/GlowHoverButton";
 import SoapBubble from "../../components/apps/SoapBubble";
 import Loader from "../../components/apps/Loader";
 import TextAnimation from "../../components/apps/TextAnimation";
-import GlowButton from "../../components/apps/GlowButton";
 import CircletoCircleCollision from "../../components/apps/CircletoCircleCollision";
 import CircletoPointCollision from "../../components/apps/CircletoPointCollision";
 import RecttoRectCollision from "../../components/apps/RecttoRectCollision";
@@ -67,14 +67,14 @@ const AppDetail: NextPage = () => {
         return <GradientBorderInput />
       case "GradientCircleLoading":
         return <GradientCircleLoading />
+      case "GlowHoverButton":
+        return <GlowHoverButton />
       case "SoapBubble":
         return <SoapBubble />
       case "Loader":
         return <Loader />
       case "TextAnimation":
         return <TextAnimation />
-      case "GlowButton":
-        return <GlowButton />
       case "CircletoCircleCollision":
         return <CircletoCircleCollision />
       case "CircletoPointCollision":

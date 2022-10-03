@@ -1,18 +1,18 @@
 .section {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 40px;
 }
 
 .section a {
   position: relative;
   background: #444;
-  color: #fff;
+  color: snow;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 1.5rem;
   letter-spacing: 0.1rem;
   font-weight: 400;
   padding: 10px 30px;
@@ -30,7 +30,7 @@
   content: "";
   position: absolute;
   inset: 2px;
-  background: #27282c;
+  background: #121212;
 }
 
  .section a span {
@@ -47,12 +47,12 @@
 .section a i::before {
   content: "";
   position: absolute;
-  top: -6px;
+  top: -4px;
   left: 100%;
   transform: translateX(-50%);
   width: 10px;
   height: 10px;
-  background: #27282c;
+  background: #121212;
   border: 2px solid var(--clr);
   transition: 0.5s;
 }
@@ -60,18 +60,18 @@
 .section a:hover i::before {
   left: 0%;
   transform: translateX(-50%) rotate(45deg);
-  box-shadow: 40px 39px var(--clr);
+  box-shadow: 40px 38px var(--clr);
 }
 
 .section a i::after {
   content: "";
   position: absolute;
-  bottom: -6px;
+  bottom: -4px;
   left: 0;
   transform: translateX(-50%);
   width: 10px;
   height: 10px;
-  background: #27282c;
+  background: #121212;
   border: 2px solid var(--clr);
   transition: 0.5s;
 }

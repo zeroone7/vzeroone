@@ -70,6 +70,7 @@ const App: NextPage = () => {
     },
     { category: "css", name: "GradientBorderInput", component: "GradientBorderInput" },
     { category: "css", name: "GradientCircleLoading", component: "GradientCircleLoading" },
+    { category: "css", name: "GlowHoverButton", component: "GlowHoverButton" },
     { category: "css", name: "SoapBubble", component: "SoapBubble" },
     { category: "css", name: "Loader", component: "Loader" },
     {
@@ -77,7 +78,6 @@ const App: NextPage = () => {
       name: "TextAnimation",
       component: "TextAnimation",
     },
-    { category: "css", name: "GlowButton", component: "GlowButton" },
     {
       category: "canvas",
       name: "CircletoCircleCollision",
