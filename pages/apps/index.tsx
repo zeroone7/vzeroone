@@ -69,6 +69,7 @@ const App: NextPage = () => {
       component: "GradientBorderCard",
     },
     { category: "css", name: "GradientBorderInput", component: "GradientBorderInput" },
+    { category: "css", name: "GradientCircleLoading", component: "GradientCircleLoading" },
     { category: "css", name: "SoapBubble", component: "SoapBubble" },
     { category: "css", name: "Loader", component: "Loader" },
     {

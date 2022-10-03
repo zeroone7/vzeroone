@@ -15,6 +15,7 @@ import Steering from "../../components/apps/Steering";
 import CubesHover from "../../components/apps/CubesHover";
 import GradientBorderCard from "../../components/apps/GradientBorderCard";
 import GradientBorderInput from "../../components/apps/GradientBorderInput";
+import GradientCircleLoading from "../../components/apps/GradientCircleLoading";
 import SoapBubble from "../../components/apps/SoapBubble";
 import Loader from "../../components/apps/Loader";
 import TextAnimation from "../../components/apps/TextAnimation";
@@ -64,6 +65,8 @@ const AppDetail: NextPage = () => {
         return <GradientBorderCard />
       case "GradientBorderInput":
         return <GradientBorderInput />
+      case "GradientCircleLoading":
+        return <GradientCircleLoading />
       case "SoapBubble":
         return <SoapBubble />
       case "Loader":
