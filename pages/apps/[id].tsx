@@ -12,6 +12,7 @@ import PerspectiveLetter from "../../components/apps/PerspectiveLetter";
 import SpiralStar from "../../components/apps/SpiralStar";
 import SpiralCircle from "../../components/apps/SpiralCircle";
 import Steering from "../../components/apps/Steering";
+import RingOfFire from "../../components/apps/RingOfFire";
 import CubesHover from "../../components/apps/CubesHover";
 import GradientBorderCard from "../../components/apps/GradientBorderCard";
 import GradientBorderInput from "../../components/apps/GradientBorderInput";
@@ -60,6 +61,8 @@ const AppDetail: NextPage = () => {
         return <SpiralCircle />
       case "Steering":
         return <Steering />
+      case "RingOfFire":
+        return <RingOfFire />
       case "CubesHover":
         return <CubesHover />
       case "GradientBorderCard":

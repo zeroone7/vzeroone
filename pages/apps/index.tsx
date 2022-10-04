@@ -62,6 +62,7 @@ const App: NextPage = () => {
     { category: "canvas", name: "SpiralStar", component: "SpiralStar" },
     { category: "canvas", name: "SpiralCircle", component: "SpiralCircle" },
     { category: "canvas", name: "Steering", component: "Steering" },
+    { category: "svg", name: "RingOfFire", component: "RingOfFire" },
     { category: "css", name: "CubesHover", component: "CubesHover" },
     {
       category: "css",
