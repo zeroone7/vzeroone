@@ -21,6 +21,7 @@ import GradientBorderInput from "../../components/apps/GradientBorderInput";
 import GradientCircleLoading from "../../components/apps/GradientCircleLoading";
 import BorderAnimation from "../../components/apps/BorderAnimation";
 import GlowHoverButton from "../../components/apps/GlowHoverButton";
+import WavyText from "../../components/apps/WavyText";
 import SoapBubble from "../../components/apps/SoapBubble";
 import Loader from "../../components/apps/Loader";
 import TextAnimation from "../../components/apps/TextAnimation";
@@ -81,6 +82,8 @@ const AppDetail: NextPage = () => {
         return <BorderAnimation />
       case "GlowHoverButton":
         return <GlowHoverButton />
+      case "WavyText":
+        return <WavyText />
       case "SoapBubble":
         return <SoapBubble />
       case "Loader":
