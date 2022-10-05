@@ -76,6 +76,7 @@ const App: NextPage = () => {
     { category: "css", name: "GradientCircleLoading", component: "GradientCircleLoading" },
     { category: "css", name: "BorderAnimation", component: "BorderAnimation" },
     { category: "css", name: "GlowHoverButton", component: "GlowHoverButton" },
+    { category: "css", name: "BackgroundBlending", component: "BackgroundBlending" },
     { category: "svg", name: "WavyText", component: "WavyText" },
     { category: "css", name: "SoapBubble", component: "SoapBubble" },
     { category: "css", name: "Loader", component: "Loader" },

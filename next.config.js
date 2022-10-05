@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  // assetPrefix: ".",
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "**.placeholder.com" },
-      { protocol: "https", hostname: "**.placeimg.com" },
-    ]
+    domains: ["placeimg.com"]
+    // remotePatterns: [
+    //   { protocol: "https", hostname: "**.placeholder.com" },
+    //   { protocol: "https", hostname: "**.placeimg.com" },
+    // ]
   },
   // async redirects() {
   //   return [

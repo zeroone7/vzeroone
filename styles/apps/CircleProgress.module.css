@@ -49,7 +49,7 @@
   animation-delay: 2.5s; */
 }
 
-@keyframes animate-fadein {
+/* @keyframes animate-fadein {
   0% {
     opacity: 0;
   }
@@ -57,7 +57,7 @@
   100% {
     opacity: 1;
   }
-}
+} */
 
 .section .card .percent .dot {
   position: absolute;
