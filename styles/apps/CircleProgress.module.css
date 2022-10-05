@@ -1,0 +1,125 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  position: relative;
+}
+
+.section .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 220px;
+  height: 250px;
+  background: #333;
+  color: snow;
+}
+
+.section .card .percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.section .card .percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(270deg);
+}
+
+.section .card .percent svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 2;
+  stroke: #191919;
+  transform: translate(5px, 5px);
+}
+
+.section .card .percent svg circle:nth-child(2) {
+  stroke: var(--clr);
+  stroke-dasharray: 440;
+  stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+  /* opacity: 0;
+  animation: animate-fadein 1s linear forwards;
+  animation-delay: 2.5s; */
+}
+
+@keyframes animate-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.section .card .percent .dot {
+  position: absolute;
+  inset: 5px;
+  z-index: 10;
+  transform: rotate(calc(3.6deg * var(--num)));
+  animation: animate-dot 2s linear forwards;
+}
+
+@keyframes animate-dot {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(calc(3.6deg * var(--num)));
+  }
+}
+
+.section .card .percent .dot::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--clr);
+  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);
+}
+
+.section .card .percent .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  inset: 0;
+  /* opacity: 0;
+  animation: animate-fadein 1s linear forwards;
+  animation-delay: 2.5s; */
+}
+
+.section .card .percent .number h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.section .card .percent .number h2 span {
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 3px;
+}
+
+.section .card .percent .number p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

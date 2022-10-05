@@ -13,6 +13,7 @@ import SpiralStar from "../../components/apps/SpiralStar";
 import SpiralCircle from "../../components/apps/SpiralCircle";
 import Steering from "../../components/apps/Steering";
 import RingOfFire from "../../components/apps/RingOfFire";
+import CircleProgress from "../../components/apps/CircleProgress";
 import AniSvgIcon from "../../components/apps/AniSvgIcon";
 import AniBlob from "../../components/apps/AniBlob";
 import CubesHover from "../../components/apps/CubesHover";
@@ -66,6 +67,8 @@ const AppDetail: NextPage = () => {
         return <Steering />
       case "RingOfFire":
         return <RingOfFire />
+      case "CircleProgress":
+        return <CircleProgress />
       case "AniSvgIcon":
         return <AniSvgIcon />
       case "AniBlob":

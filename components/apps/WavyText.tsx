@@ -2,7 +2,7 @@ import styles from "../../styles/apps/WavyText.module.css";
 
 import type { NextPage } from "next";
 
-const AniBlob: NextPage = () => {
+const WavyText: NextPage = () => {
   return (
     <section className={styles.section}>
       <svg>
@@ -16,4 +16,4 @@ const AniBlob: NextPage = () => {
   );
 };
 
-export default AniBlob;
+export default WavyText;
