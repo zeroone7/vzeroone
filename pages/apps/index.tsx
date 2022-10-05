@@ -19,24 +19,9 @@ type AppProp = {
 
 const App: NextPage = () => {
   const router = useRouter();
-  // const [selectApp, setSelectApp] = useState("");
+  // const [selCategory, setSelCategory] = useState("all");
 
-  let appItem;
-
-  const hClick = ({ id, category, name, component }: AppProp) => {
-    router.push(
-      {
-        pathname: `/apps/${id}`,
-        query: {
-          id,
-          category,
-          name,
-          component,
-        },
-      },
-      `/apps/${id}`
-    );
-  };
+  let appItem: Array<JSX.Element>;
 
   const apps = [
     { category: "threeD", name: "BakedLighting", component: "BakedLighting" },
@@ -72,11 +57,23 @@ const App: NextPage = () => {
       name: "GradientBorderCard",
       component: "GradientBorderCard",
     },
-    { category: "css", name: "GradientBorderInput", component: "GradientBorderInput" },
-    { category: "css", name: "GradientCircleLoading", component: "GradientCircleLoading" },
+    {
+      category: "css",
+      name: "GradientBorderInput",
+      component: "GradientBorderInput",
+    },
+    {
+      category: "css",
+      name: "GradientCircleLoading",
+      component: "GradientCircleLoading",
+    },
     { category: "css", name: "BorderAnimation", component: "BorderAnimation" },
     { category: "css", name: "GlowHoverButton", component: "GlowHoverButton" },
-    { category: "css", name: "BackgroundBlending", component: "BackgroundBlending" },
+    {
+      category: "css",
+      name: "BackgroundBlending",
+      component: "BackgroundBlending",
+    },
     { category: "svg", name: "WavyText", component: "WavyText" },
     { category: "css", name: "SoapBubble", component: "SoapBubble" },
     { category: "css", name: "Loader", component: "Loader" },
@@ -116,67 +113,70 @@ const App: NextPage = () => {
     // },
   ];
 
-  const categoryColor = (category: string) => {
-    switch (category) {
-      case "3D":
-        return styles.threed;
-      case "canvas":
-        return styles.canvas;
-      case "css":
-        return styles.css;
-      default:
-        break;
-    }
+  const hClick = ({ id, category, name, component }: AppProp) => {
+    router.push(
+      {
+        pathname: `/apps/${id}`,
+        query: {
+          id,
+          category,
+          name,
+          component,
+        },
+      },
+      `/apps/${id}`
+    );
   };
 
   appItem = apps.map((app, id) => (
-    <div className={styles.card} key={id} onClick={() => hClick({ id, ...app })}>
+    <div
+      className={styles.card}
+      key={id}
+      onClick={() => hClick({ id, ...app })}
+    >
       <span></span>
       <div className={styles.content}>
-        {/* <span className={categoryColor(app.category)}>{app.category}</span> */}
         <p>{app.category}</p>
         <p>{app.name}</p>
       </div>
     </div>
   ));
 
-  // const hOnChange = (e: SelectChangeEvent) => {
-  //   setSelectApp(e.target.value);
+  // const hChange = (e: SelectChangeEvent) => {
+  //   setSelCategory(e.target.value as string);
+  // };
+
+  // const changeCategoryApp = () => {
+  //   if (selCategory === "threeD") {
+  //     apps.filter((app) => app.category === "threeD");
+  //   } else {
+  //   }
   // };
 
   // useEffect(() => {
-  // const filteredApp = apps.filter((app) => {
-  //   app.category === selectApp;
-  // });
-  // console.log(filteredApp);
-
-  // appItem = filteredApp.map((app) => (
-  //   <li key={app.id} onClick={() => hClick(app)}>
-  //     <span>{app.category}</span>
-  //     <p>{app.name}</p>
-  //   </li>
-  // ));
-  // }, [selectApp]);
+  //   changeCategoryApp();
+  // }, [selCategory]);
 
   return (
     <section className={styles.section}>
       <Header title="App | ZeroOne" />
-      {appItem}
 
       {/* <FormControl fullWidth>
-        <InputLabel id="lbl-select">Age</InputLabel>
+        <InputLabel id="lblSelect">App Category</InputLabel>
         <Select
-          labelId="lbl-select"
-          id="app-select"
-          value={selectApp}
-          label="App category"
-          onChange={hOnChange}
+          labelId="lblSelect"
+          label="App Category"
+          value={selCategory}
+          onChange={hChange}
         >
+          <MenuItem value="threeD">3D</MenuItem>
+          <MenuItem value="svg">SVG</MenuItem>
           <MenuItem value="css">CSS</MenuItem>
           <MenuItem value="canvas">Canvas</MenuItem>
-          <MenuItem value="script">Script</MenuItem>
         </Select>
       </FormControl> */}
+
+      {appItem}
     </section>
   );
 };
