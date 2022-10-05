@@ -14,6 +14,7 @@ import SpiralCircle from "../../components/apps/SpiralCircle";
 import Steering from "../../components/apps/Steering";
 import RingOfFire from "../../components/apps/RingOfFire";
 import AniSvgIcon from "../../components/apps/AniSvgIcon";
+import AniBlob from "../../components/apps/AniBlob";
 import CubesHover from "../../components/apps/CubesHover";
 import GradientBorderCard from "../../components/apps/GradientBorderCard";
 import GradientBorderInput from "../../components/apps/GradientBorderInput";
@@ -66,6 +67,8 @@ const AppDetail: NextPage = () => {
         return <RingOfFire />
       case "AniSvgIcon":
         return <AniSvgIcon />
+      case "AniBlob":
+        return <AniBlob />
       case "CubesHover":
         return <CubesHover />
       case "GradientBorderCard":

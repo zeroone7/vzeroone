@@ -1,0 +1,15 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section .blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+}
+
+.section .blob:nth-child(2) {
+  filter: blur(50px);
+}

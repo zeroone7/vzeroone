@@ -2,33 +2,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.section .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   position: relative;
 }
 
-.section .container .icon {
+.section .icon {
   width: 300px;
   padding: 20px;
 }
 
-.section .container .icon path {
+.section .icon path {
   fill: transparent;
   stroke-width: 10;
   stroke: aqua;
 }
 
-.section .container .icon.heart path {
+.section .icon.heart path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 0;
 }
 
-.section .container .icon.heart:hover path {
+.section .icon.heart:hover path {
   animation: animate-heart 2s linear forwards
 }
 
@@ -49,12 +43,12 @@
   }
 }
 
-.section .container .icon.star path {
+.section .icon.star path {
   stroke-dasharray: 1700;
   stroke-dashoffset: 0;
 }
 
-.section .container .icon.star:hover path {
+.section .icon.star:hover path {
   animation: animate-star 2s linear forwards
 }
 
@@ -75,12 +69,12 @@
   }
 }
 
-.section .container .icon.moon path {
+.section .icon.moon path {
   stroke-dasharray: 1500;
   stroke-dashoffset: 0;
 }
 
-.section .container .icon.moon:hover path {
+.section .icon.moon:hover path {
   animation: animate-moon 2s linear forwards
 }
 

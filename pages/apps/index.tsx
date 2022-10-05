@@ -64,6 +64,7 @@ const App: NextPage = () => {
     { category: "canvas", name: "Steering", component: "Steering" },
     { category: "svg", name: "RingOfFire", component: "RingOfFire" },
     { category: "svg", name: "AniSvgIcon", component: "AniSvgIcon" },
+    { category: "svg", name: "AniBlob", component: "AniBlob" },
     { category: "css", name: "CubesHover", component: "CubesHover" },
     {
       category: "css",
