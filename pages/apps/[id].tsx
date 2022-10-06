@@ -19,6 +19,7 @@ import AniBlob from "../../components/apps/AniBlob";
 import CubesHover from "../../components/apps/CubesHover";
 import GradientBorderCard from "../../components/apps/GradientBorderCard";
 import GradientBorderInput from "../../components/apps/GradientBorderInput";
+import AniCircleLoading from "../../components/apps/AniCircleLoading";
 import GradientCircleLoading from "../../components/apps/GradientCircleLoading";
 import BorderAnimation from "../../components/apps/BorderAnimation";
 import GlowHoverButton from "../../components/apps/GlowHoverButton";
@@ -80,6 +81,8 @@ const AppDetail: NextPage = () => {
         return <GradientBorderCard />
       case "GradientBorderInput":
         return <GradientBorderInput />
+      case "AniCircleLoading":
+        return <AniCircleLoading />
       case "GradientCircleLoading":
         return <GradientCircleLoading />
       case "BorderAnimation":

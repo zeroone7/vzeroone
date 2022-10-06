@@ -64,6 +64,11 @@ const App: NextPage = () => {
     },
     {
       category: "css",
+      name: "AniCircleLoading",
+      component: "AniCircleLoading",
+    },
+    {
+      category: "css",
       name: "GradientCircleLoading",
       component: "GradientCircleLoading",
     },
